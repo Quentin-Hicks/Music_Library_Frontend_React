@@ -22,30 +22,30 @@ const MusicForm = (props) => {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
-                <label></label>
-                <input />
+                <label>Title</label>
+                <input type='text' value={title} onChange={(event) => setTitle(event.target.value)}/>
             </div>
             <div>
-                <label></label>
-                <input />
+                <label>Artist</label>
+                <input type='text' value={artist} onChange={(event) => setArtist(event.target.value)}/>
             </div>
             <div>
-                <label></label>
-                <input />
+                <label>Album</label>
+                <input type='text' value={album} onChange={(event) => setAlbum(event.target.value)}/>
             </div>
             <div>
-                <label></label>
-                <input />
+                <label>Release Date</label>
+                <input type='text' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
             </div>
             <div>
-                <label></label>
-                <input />
+                <label>Genre</label>
+                <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
             </div>
-            <button></button>
+            <button type='submit'>Submit</button>
         </form>
     )
 }
 
-export default MusicLibraryForm
+export default MusicForm
