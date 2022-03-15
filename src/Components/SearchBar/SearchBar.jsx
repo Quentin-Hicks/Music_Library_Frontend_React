@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 
 const SearchBar = (props) => {
-    const [searchTerm, setSearchTerm] = useState('')
+    const [searchSong, setSearchSong] = useState('')
 
-    function handleSubmit(element){
-
+    function handleSubmit(e){
+        e.preventDefault()
+        props.filterSongs(searchSong)
     }
 
     return (
         <div>
-            
+            <form onSubmit={handleSubmit}>
+                <input value={searchSong} onChange={(e) => setSearchSong(e.target.value)} type='text' placeholder='Search by name...'></input>
+                <button type='submit'>Search</button>
+            </form>
         </div>
     )
 }
+
+export default SearchBar

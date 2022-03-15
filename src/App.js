@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import MusicForm from './Components/MusicForm/MusicForm';
 import DisplaySongs from './Components/DislpaySongs/DisplaySongs';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
 
@@ -54,7 +55,17 @@ function App() {
   //   await getAllSongs()
   // }
 
+  const filterSongs = (searchSong) => {
+    console.log(searchSong)
+    let matchingSongs = getAllSongs().fiter((song) => {
+      if(song.title.toLowerCase().includes(searchSong.title.toLowerCase())){
+        return true
+      }
+      else return false
+    })
 
+    setSongs(matchingSongs)
+  }
 
   // need to make a component DisplaySongs and set it up like the
   // display post will need songs pass in as props, should look 
@@ -64,7 +75,7 @@ function App() {
     <div>
       <h3>My Music</h3>
       <div className='App'>
-        {/* <button onClick={() => sendSong()}>Submit</button> */}
+        <SearchBar filterSongs={filterSongs}/>
         <MusicForm createSong={createSong} />
         <DisplaySongs songs={songs} />
       </div>
