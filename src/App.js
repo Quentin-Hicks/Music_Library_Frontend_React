@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import MusicForm from './Components/MusicForm';
-import DisplaySongs from './Components/DisplaySongs';
+import MusicForm from './Components/MusicForm/MusicForm';
+import DisplaySongs from './Components/DislpaySongs/DisplaySongs';
 
 function App() {
 
