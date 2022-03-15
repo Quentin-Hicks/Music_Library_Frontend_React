@@ -17,10 +17,20 @@ function App() {
   createSong(song)
   }
 
+  useEffect(() => {
+    getAllSongs()
+  }, [])
+
+  async function getAllSongs(){
+    let response = await axios.get('http://127.0.0.1:8000/api/music/')
+    setSongs(response.data)
+    console.log(response.data)
+  }
+
   async function createSong(newSong){
     let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong)
     console.log(response.data)
-    setSongs(response.data)
+    await getAllSongs()
   }
 
   return (
