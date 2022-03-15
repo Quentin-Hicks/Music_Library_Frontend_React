@@ -10,7 +10,7 @@ function App() {
       "id": 4,
       "title": "Video",
       "artist": "Indie.Arie",
-      "album": "",
+      "album": "Amazing",
       "release_date": "2000-06-15",
       "genre": "RNB"
   }
