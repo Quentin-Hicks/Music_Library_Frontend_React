@@ -44,7 +44,7 @@ const MusicForm = (props) => {
                 <label>Genre</label>
                 <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
             </div>
-            <button type="submit" >Add a Song</button>
+            <button type="submit" >Add Song</button>
             {/* <button onClick={props.getAllSongs()}>Display Songs</button> */}
         </form>
     )
