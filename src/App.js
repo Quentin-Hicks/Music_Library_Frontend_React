@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import MusicForm from './Components/MusicForm';
+import DisplaySongs from './Components/DisplaySongs';
 
 function App() {
 
@@ -47,11 +48,11 @@ function App() {
     await getAllSongs()
   }
 
-  async function deleteSong(){
-    let response = await axios.delete()
-    console.log(response.data)
-    await getAllSongs()
-  }
+  // async function deleteSong(){
+  //   let response = await axios.delete()
+  //   console.log(response.data)
+  //   await getAllSongs()
+  // }
 
 
 
@@ -65,6 +66,7 @@ function App() {
       <div className='App'>
         {/* <button onClick={() => sendSong()}>Submit</button> */}
         <MusicForm createSong={createSong} />
+        <DisplaySongs songs={songs} />
       </div>
     </div>
   );
