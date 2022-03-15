@@ -6,7 +6,13 @@ const DisplaySongs = (props) => {
         {props.songs.map((song, index) => {
             return (
                 <div>
-                    <div><p>{song.title}</p></div>
+                    <div>
+                        <p>{song.title}</p>
+                        <p>{song.artist}</p>
+                        <p>{song.album}</p>
+                        <p>{song.release_date}</p>
+                        <p>{song.genre}</p>
+                    </div>
                 </div>
             )
         })}
