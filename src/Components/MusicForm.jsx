@@ -6,7 +6,7 @@ const MusicForm = (props) => {
     const [title, setTitle] = useState('')
     const [artist, setArtist] = useState('')
     const [album, setAlbum] = useState('')
-    const [releaseDate, setReleaseDate] = useState('')
+    const [release_date, setReleaseDate] = useState('')
     const [genre, setGenre] = useState('')
 
     function handleSubmit(event) {
@@ -15,10 +15,11 @@ const MusicForm = (props) => {
             title: title,
             artist: artist,
             album: album,
-            releaseDate: releaseDate,
+            release_date: release_date,
             genre: genre
         }
         console.log(newSong)
+        props.createSong(newSong)
     }
 
     return (
@@ -37,13 +38,14 @@ const MusicForm = (props) => {
             </div>
             <div>
                 <label>Release Date</label>
-                <input type='text' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
+                <input type='date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
             </div>
             <div>
                 <label>Genre</label>
                 <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
             </div>
-            <button type='submit'>Submit</button>
+            <button type="submit" >Add a Song</button>
+            {/* <button onClick={props.getAllSongs()}>Display Songs</button> */}
         </form>
     )
 }

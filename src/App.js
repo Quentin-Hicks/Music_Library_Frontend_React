@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import MusicForm from './Components/MusicForm';
 
 function App() {
 
   const [songs, setSongs] = useState([])
 
-  function sendSong(){
-    let song = {
-      "id": 4,
-      "title": "Video",
-      "artist": "Indie.Arie",
-      "album": "Amazing",
-      "release_date": "2000-06-15",
-      "genre": "RNB"
-  }
-  createSong(song)
-  }
+  // function sendSong(){
+  //   let song = {
+  //     "id": 4,
+  //     "title": "Video",
+  //     "artist": "Indie.Arie",
+  //     "album": "Amazing",
+  //     "release_date": "2000-06-15",
+  //     "genre": "RNB"
+  // }
+    // createSong(song)
+    // }
 
   useEffect(() => {
     getAllSongs()
   }, [])
 
   async function getAllSongs(){
-    let response = await axios.get('http://127.0.0.1:8000/api/music/')
+    let response = await axios.get('http://127.0.0.1:8000/api/music/');
     setSongs(response.data)
     console.log(response.data)
   }
@@ -39,7 +40,7 @@ function App() {
     await getAllSongs()
   }
 
-  // example of how ao post is different and how to call by ID
+  // example of how a post is different and how to call by ID
   async function updateSong(songData, songId){
     let response = await axios.put(`http://127.0.0.1:8000/api/music/${songId}`, songData)
     console.log(response.data)
@@ -56,7 +57,8 @@ function App() {
     <div>
       <h3>My Music</h3>
       <div className='App'>
-        <button onClick={() => sendSong()}>Submit</button>
+        {/* <button onClick={() => sendSong()}>Submit</button> */}
+        <MusicForm createSong={createSong} />
       </div>
     </div>
   );
