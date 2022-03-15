@@ -46,6 +46,12 @@ function App() {
     await getAllSongs()
   }
 
+  async function deleteSong(){
+    let response = await axios.delete()
+    console.log(response.data)
+    await getAllSongs()
+  }
+
   return (
     <div>
       <h3>My Music</h3>
