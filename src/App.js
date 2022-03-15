@@ -53,6 +53,12 @@ function App() {
     await getAllSongs()
   }
 
+
+
+  // need to make a component DisplaySongs and set it up like the
+  // display post will need songs pass in as props, should look 
+  // similar to how we are passing in props into MusicFrom
+  // <DisplaySongs songs={songs}/>
   return (
     <div>
       <h3>My Music</h3>
