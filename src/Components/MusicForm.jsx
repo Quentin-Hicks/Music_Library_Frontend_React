@@ -11,14 +11,14 @@ const MusicForm = (props) => {
 
     function handleSubmit(event) {
         event.preventDefault()
-        let newMusic = {
+        let newSong = {
             title: title,
             artist: artist,
             album: album,
             releaseDate: releaseDate,
             genre: genre
         }
-        console.log(newMusic)
+        console.log(newSong)
     }
 
     return (

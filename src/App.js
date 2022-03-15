@@ -33,6 +33,19 @@ function App() {
     await getAllSongs()
   }
 
+  async function getSongById(){
+    let response = await axios.get(`http://127.0.0.1:8000/api/music/`)
+    console.log(response)
+    await getAllSongs()
+  }
+
+  // example of how ao post is different and how to call by ID
+  async function updateSong(songData, songId){
+    let response = await axios.put(`http://127.0.0.1:8000/api/music/${songId}`, songData)
+    console.log(response.data)
+    await getAllSongs()
+  }
+
   return (
     <div>
       <h3>My Music</h3>
